@@ -1,11 +1,17 @@
 <footer class="footer">
   <small>
-    <p>Car Pool App</p>
+    <p>All contents copyright &copy; 2015. All Rights Reserved &copy; SFYOURIDE GROUP</p>
   </small>
   <nav>
     <ul>
-      <li><%= link_to "HOME", root_path %></li>
+      <% if logged_in? %>
+        <li><%= link_to "HOME", current_user %></li>
+      <% else %>
+        <li><%= link_to "HOME", root_path ,class: "select"%></li>
+      <% end %>
       <li><%= link_to "ABOUT", about_path %></li>
+      <li><%= link_to "SIGN UP", signup_path %></li>
+      <li><%= link_to "LOG IN", login_path %></li>
     </ul>
   </nav>
 </footer>

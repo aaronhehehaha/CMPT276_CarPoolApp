@@ -1,5 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@web_color: #649EBF;
+body {
+	background: #fff url(bg.png) repeat top left;
+}
 #wrapper{
 	width: 80%;
 	margin-left: auto;
@@ -30,33 +34,79 @@ p {
 
 /*header*/
 header{
-	border-bottom: 1px solid #eaeaea;
-	margin: auto;
+	margin-top: 10px;
 	height: 100px;
 
 	#logo {
-		border: thin solid black;
-		width: 200px;
+		width: 30%;
 		float: left;
-		height: 95px;
 		margin-left: 10px;
+		.logo-size{
+			width:100%;
+			height: auto;
+		}
 	}
+
+	/*navigation*/
 	#nav {
+		font-family: "Comic Sans MS", cursive, sans-serif;
 		height: 50px;
 		float: right;
-		margin-top: 25px;
-		margin-botton: 25px;
+		margin-top: 30px;
+		margin-bottom: 25px;
 		margin-right: 10px;
+		padding-right: 30px;
 	}
+
 	#nav li {
-		display: inline;
+		float :left;
+		list-style-type: none;
+		position: relative;
 	}
+
+	#nav ul li a.select {
+		color: red;
+	}
+
 	#nav a {
+		font-size: 1.2em;
+		display: block;
+		height: 30px;
+		width: 100px;
+		color: #649EBF;
+		line-height: 30px;
 		text-decoration: none;
-		font-family : Verdana, Geneva, sans-serif;
 		text-align: center;
-		padding: 15px;
+		font-weight: bolder;
 	}
+
+	#nav a:hover{
+		color: #1A99E7;
+	}
+
+	#nav ul ul {
+		visibility: hidden;
+		position: absolute;
+		left:0px;
+		top:30px;
+		margin:0;
+		padding:0;
+	}
+	#nav ul ul li a {
+		width: 150px;
+		text-align:left;
+		margin-left:10px;
+	}
+	#nav ul ul li{
+		clear: both;
+		background:#181A1D;
+		margin-top:3px;
+	}
+
+	#nav ul li:hover ul{
+		visibility: visible;
+	}
+
 }
 /*footer*/
 footer {
@@ -86,40 +136,82 @@ footer ul li {
 /*content*/
 #content{
 	margin-top: 10px;
-	border: thin solid black;
 	margin-bottom: 10px;
-	height: 550px;
+	height: auto;
 }
-#log_in {
-	margin-top: 5px;
-	margin-left: 5px;
-	border: thin solid black;
-	float: left;
-	width: 350px;
-	height: 535px;
-}
-h2 {
-	font-family: Arial, Helvetica, sans-serif;
+/*log_in page and sign_up page*/
 
+#input_form {
+	margin-right: auto;
+	margin-left: auto;
+	width: 40%;
+	min-width: 300px;
+	background-color: white;
+	.input{
+		padding: 10px;
+	}
+	form input[type=text], {
+		font-size: 1.7em;
+	}
+	form input[type=password], {
+		font-size: 1.7em;
+	}
+	li {
+		list-style: none;
+		margin-bottom: 1em;
 }
-#log_in form {
-	font-family: "Times New Roman", Times, serif;
-	padding-bottom: 5px;
-	font-size: 19px;
+	h2{
+		font-size: 3em;
+		font-family: "Comic Sans MS", cursive, sans-serif;
+	}
 }
-.button {
-	font-family: "Times New Roman", Times, serif;
-	display: block;
+.form
+{
+      position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
-#images {
-	width: 600px;
-	height: 535px;
-	float: right;
-	border: thin solid black;
+
+.form:before, .form:after
+{
+    content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:0;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+
+.form:after
+{
+    right:10px;
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
+}
+
+
+
+#describe_image {
 	margin-top: 5px;
 	margin-bottom: 5px;
-	margin-right: 5px;
-	margin-left: 5px;
+}
+.image-size {
+	width: 100%;
+	height: auto;
+}
+#signup_button {
+	text-align:center;
 }
 
 #social {
@@ -141,6 +233,7 @@ input {
 #error_explanation {
 	color: red;
 	ul {
+    li {list-style-type: square;}
 		color: red;
 		margin: 0 0 30px 0;
 	}

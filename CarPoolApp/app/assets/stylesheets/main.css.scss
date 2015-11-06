@@ -2,7 +2,7 @@
 @import "bootstrap";
 @web_color: #649EBF;
 body {
-	background: #fff url(bg.png) repeat top left;
+	background: #fff url(asset-path('bg.png')) repeat top left;
 }
 #wrapper{
 	width: 80%;
@@ -49,7 +49,8 @@ header{
 
 	/*navigation*/
 	#nav {
-		font-family: normal, sans-serif;
+		//font-family: normal, sans-serif;
+		font-family: "Comic Sans MS", cursive, sans-serif;
 		height: 50px;
 		float: right;
 		margin-top: 30px;
@@ -162,7 +163,9 @@ footer ul li {
 }
 	h2{
 		font-size: 3em;
-		font-family: normal, sans-serif;
+		//font-family: normal, sans-serif;
+		font-family: "Comic Sans MS", cursive, sans-serif;
+
 	}
 }
 .form

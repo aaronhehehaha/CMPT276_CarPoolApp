@@ -2,7 +2,7 @@
 michael:
   firstname: Michael
   lastname: Example
-  email: michael@example.com
+  email: michael@sfu.ca
   password_digest: <%= User.digest('password') %>
   admin: true
   activated: true
@@ -11,7 +11,7 @@ michael:
 archer:
   firstname: Sterling
   lastname: Archer
-  email: duchess@example.gov
+  email: duchess@sfu.ca
   password_digest: <%= User.digest('password') %>
   activated: true
   activated_at: <%= Time.zone.now %>
@@ -19,7 +19,7 @@ archer:
 lana:
   firstname: Lana
   lastname: Kane
-  email: hands@example.gov
+  email: hands@sfu.ca
   password_digest: <%= User.digest('password') %>
   activated: true
   activated_at: <%= Time.zone.now %>
@@ -27,7 +27,7 @@ lana:
 mallory:
   firstname: Mallory
   lastname: Archer
-  email: boss@example.gov
+  email: boss@sfu.ca
   password_digest: <%= User.digest('password') %>
   activated: true
   activated_at: <%= Time.zone.now %>
@@ -36,7 +36,7 @@ mallory:
 user_<%= n %>:
   firstname:  <%= "User #{n}" %>
   lastname: <%= "User #{n}" %>
-  email: <%= "user-#{n}@example.com" %>
+  email: <%= "user-#{n}@sfu.ca" %>
   password_digest: <%= User.digest('password') %>
   activated: true
   activated_at: <%= Time.zone.now %>

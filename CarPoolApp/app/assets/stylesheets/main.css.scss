@@ -157,15 +157,21 @@ footer ul li {
 	form input[type=password], {
 		font-size: 1.7em;
 	}
+	form input[type=email], {
+		font-size: 1.7em;
+	}
+
 	li {
 		list-style: none;
 		margin-bottom: 1em;
 }
 	h2{
 		font-size: 3em;
-		//font-family: normal, sans-serif;
 		font-family: "Comic Sans MS", cursive, sans-serif;
 
+	}
+	.rem{
+		font-size: 0.5em;
 	}
 }
 .form

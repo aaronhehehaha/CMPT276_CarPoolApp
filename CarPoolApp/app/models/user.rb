@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
+  acts_as_messageable
   attr_accessor :activation_token, :reset_token
   before_create :create_activation_digest
+
 
   before_save {self.email = email.downcase}
   validates :firstname, presence: true, length: { maximum: 50}
@@ -9,8 +11,12 @@ class User < ActiveRecord::Base
   validates :email,:format => /@sfu.ca/, presence: true, length: { maximum: 255},
   uniqueness: { case_sensitive: false}
   has_secure_password
-    validates :password, presence:true, length: { minimum: 6}, allow_nil: true 
+    validates :password, presence:true, length: { minimum: 6}, allow_nil: true
 
+    def mailboxer_email(object)
+      email
+    end
+    
     def authenticated?(attribute, token)
       digest = send("#{attribute}_digest")
       #return false if digest.nil?
@@ -49,6 +55,7 @@ class User < ActiveRecord::Base
     def password_reset_expired?
       reset_sent_at < 2.hours.ago
     end
+
 
     private
 

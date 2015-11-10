@@ -16,9 +16,25 @@ Rails.application.routes.draw do
 
   delete 'logout' => 'sessions#destroy'
 
+  resources :conversations, only: [:index, :show, :destroy]
+
   resources :users
+
   resources :account_activations, only: [:edit]
+
   resources :password_resets, only: [:new, :create, :edit, :update]
+
+  resources :messages, only: [:new, :create]
+
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :reply
+      post :restore
+      post :mark_as_read
+    end
+end
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

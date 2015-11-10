@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def new
   end
 
@@ -7,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       if user.activated?
         log_in user
-        redirect_back_or user
+        redirect_to current_user
       else
         message  = "Account not activated. "
         message += "Check your email for the activation link."
@@ -24,4 +25,6 @@ class SessionsController < ApplicationController
     log_out
     redirect_to root_url
   end
+
+
 end

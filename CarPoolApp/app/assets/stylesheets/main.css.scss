@@ -65,10 +65,6 @@ header{
 		position: relative;
 	}
 
-	#nav ul li a.select {
-		color: red;
-	}
-
 	#nav a {
 		font-size: 1.2em;
 		display: block;
@@ -97,10 +93,13 @@ header{
 		width: 150px;
 		text-align:left;
 		margin-left:10px;
+		.select{
+			color: red;
+		}
 	}
 	#nav ul ul li{
 		clear: both;
-		background:#181A1D;
+		background: WHITE;
 		margin-top:3px;
 	}
 

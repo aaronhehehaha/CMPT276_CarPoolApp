@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'pages#home'
-  
+
   get 'password_resets/new'
 
   get 'password_resets/edit'

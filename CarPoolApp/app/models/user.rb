@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :posts
   acts_as_messageable
   attr_accessor :activation_token, :reset_token
   before_create :create_activation_digest
@@ -16,7 +17,7 @@ class User < ActiveRecord::Base
     def mailboxer_email(object)
       email
     end
-    
+
     def authenticated?(attribute, token)
       digest = send("#{attribute}_digest")
       #return false if digest.nil?

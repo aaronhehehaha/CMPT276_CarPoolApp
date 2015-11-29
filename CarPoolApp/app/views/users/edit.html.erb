@@ -6,8 +6,8 @@
     </br>
     <h2>Update Your Account</h2>
     <div class="input">
-      <%= render 'shared/error_messages' %>
       <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
       <%= f.text_field :firstname ,placeholder: :firstname%>
       <%= f.text_field :lastname ,placeholder: :lastname%>
       <%= f.text_field :email , placeholder: :email%>

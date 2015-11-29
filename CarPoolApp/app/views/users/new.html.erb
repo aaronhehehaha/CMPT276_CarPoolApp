@@ -6,8 +6,8 @@
     </br>
     <h2>Sign Up to Find a New Way to School</h2>
     <div class="input">
-      <%= render 'shared/error_messages' %>
       <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
       <%= f.text_field :firstname ,placeholder: "First Name"%>
       <%= f.text_field :lastname ,placeholder: "Last Name"%>
       <%= f.text_field :email , placeholder: "SFU E-mail Address"%>

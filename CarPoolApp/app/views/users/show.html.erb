@@ -1,11 +1,20 @@
 <% provide(:title, @user.firstname) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= @user.firstname %>
-        <%= @user.lastname %>
-      </h1>
-    </section>
-  </aside>
+<div class="show">
+  <div class="title">
+    <h1>Hello, <%= @user.firstname %>
+    <%= @user.lastname %></h1>
+  </div>
+  <div id="userpost">
+    <% if @user.posts.any? %>
+    <h3>posts (<%= @user.posts.count %>)</h3>
+    <ol class="posts">
+      <%= render @posts %>
+    </ol>
+    <%= will_paginate @posts %>
+    <%else%>
+    <h3>You have no post</h2>
+    <% end %>
+    <%= link_to "Create a new post", createpost_path(current_user), class: "button button-glow button-rounded button-caution"%>
+    <%= link_to "Search for a ride", viewpost_path(current_user), class: "button button-glow button-rounded button-raised button-primary"%>
+  </div>
 </div>

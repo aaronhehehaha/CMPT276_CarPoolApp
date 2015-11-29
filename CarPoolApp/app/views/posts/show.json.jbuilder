@@ -1,0 +1,1 @@
+json.extract! @post, :id, :StreetNumber, :StreetName, :Mon, :MonStartTime, :MonEndTime, :Tue, :TueStartTime, :TueEndTime, :Wen, :WenStartTime, :MonEndTime, :Thu, :ThuStartTime, :ThuEndTime, :Fri, :FriStartTime, :FriEndTime, :Content, :user_id, :created_at, :updated_at

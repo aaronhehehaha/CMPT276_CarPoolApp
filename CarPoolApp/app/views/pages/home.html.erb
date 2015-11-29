@@ -1,8 +1,19 @@
+<% if logged_in? %>
+  <% provide(:title, @user.firstname) %>
+<% end %>
 <div id="content">
+  <div id="logged_in_btn">
+    <% if logged_in? %>
+      <%= link_to "Create a new post", createpost_path(current_user), class: "button button-glow button-rounded button-caution",id: "left" %>
+      <%= link_to "Search for a ride", viewpost_path(current_user), class: "button button-glow button-rounded button-raised button-primary", id: "right" %>
+    <% end %>
+</div>
   <div id="describe_image">
     <%= image_tag("describe_image.png", :alt => "describe_image", :class =>"image-size") %>
   </div>
-  <div id="signup_button">
-    <%= link_to "Sign up now!", signup_path, class: "button button-glow button-rounded button-caution" %>
-  </div>
+  <% if !logged_in? %>
+    <div id="signup_button">
+      <%= link_to "Sign up now!", signup_path, class: "button button-glow button-rounded button-caution" %>
+    </div>
+  <% end %>
 </div>

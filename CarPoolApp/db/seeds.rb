@@ -13,18 +13,20 @@ User.create!(firstname: "Example",
               admin: true,
               activated: true,
               activated_at: Time.zone.now)
-
-99.times do |n|
+10.times do |n|
   firstname  = Faker::Name.name
   lastname  = Faker::Name.name
   email = "example-#{n+1}@sfu.ca"
   password = "password"
   User.create!(firstname:  firstname,
-              lastname: lastname,
-              email: email,
-              password:              password,
-              password_confirmation: password,
-              admin: false,
-              activated: true,
-              activated_at: Time.zone.now)
+  lastname: lastname,
+  email: email,
+  password:              password,
+  password_confirmation: password,
+  admin: false,
+  activated: true,
+  activated_at: Time.zone.now)
 end
+#user = User.find_by(email:"exampleuser@sfu.ca")
+#StreetNumber = 9339
+#user.posts.create!(StreetNumber: StreetNumber)

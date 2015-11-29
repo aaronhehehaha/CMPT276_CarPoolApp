@@ -1,0 +1,37 @@
+<div id="input_form">
+  <div class="form">
+    </br>
+    <h2>New Post</h2>
+    <div class="input">
+      <%= form_for(@post) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+        <%= f.text_field :Address ,placeholder: "Address"%>
+        <p>Example: 8888 University Dr, Burnaby. <strong>*This is a required field.</strong></p>
+        <%= f.select :destination,options_for_select([['Burnaby'],['Surry'],['Vancouver']]) , { :class => "selectf" }%>
+        <p>Choose which campus is your destination. <strong>*This is a required field.</strong></p>
+        <%= f.number_field :MonStartTime,placeholder:"The time you leave home on Monday." %>
+        <p>Example: 0900 is 9:00. <strong>*Leave this blank if you are not available on Monday.</strong></p>
+        <%= f.number_field :MonEndTime,placeholder:"The time you leave school on Monday."  %>
+        <p>Example: 0900 is 9:00. <strong>*Leave this blank if you are not available on Monday.</strong></p>
+        <%= f.number_field :TueStartTime ,placeholder:"The time you leave home on Tuesday."%>
+        <p>Example: 0900 is 9:00. <strong>*Leave this blank if you are not available on Tuesday.</strong></p>
+        <%= f.number_field :TueEndTime ,placeholder:"The time you leave school on Tuesday."%>
+        <p>Example: 0900 is 9:00. <strong>*Leave this blank if you are not available on Tuesday.</strong></p>
+        <%= f.number_field :WenStartTime ,placeholder:"The time you leave home on Wednesday."%>
+        <p>Example: 0900 is 9:00. <strong>*Leave this blank if you are not available on Wednesday.</strong></p>
+        <%= f.number_field :WenEndTime ,placeholder:"The time you leave school on Wednesday."%>
+        <p>Example: 0900 is 9:00. <strong>*Leave this blank if you are not available on Wednesday.</strong></p>
+        <%= f.number_field :ThuStartTime,placeholder:"The time you leave home on Thursday." %>
+        <p>Example: 0900 is 9:00. <strong>*Leave this blank if you are not available on Thursday.</strong></p>
+        <%= f.number_field :ThuEndTime ,placeholder:"The time you leave school on Thursday."%>
+        <p>Example: 0900 is 9:00. <strong>*Leave this blank if you are not available on Thursday.</strong></p>
+        <%= f.number_field :FriStartTime,placeholder:"The time you leave home on Friday." %>
+        <p>Example: 0900 is 9:00. <strong>*Leave this blank if you are not available on Friday.</strong></p>
+        <%= f.number_field :FriEndTime ,placeholder:"The time you leave school on Friday."%>
+        <p>Example: 0900 is 9:00. <strong>*Leave this blank if you are not available on Friday.</strong></p>
+        <%= f.text_area :Content ,placeholder:"Content"%>
+        <input class="button button-glow button-rounded button-raised button-primary" name="commit" type="submit" value="Post" />
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :posts
   root 'pages#home'
 
   get 'password_resets/new'
@@ -11,6 +12,10 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
 
   get 'login' => 'sessions#new'
+
+  get 'createpost' => 'posts#new'
+
+  get 'viewpost' => 'posts#index'
 
   post 'login' => 'sessions#create'
 

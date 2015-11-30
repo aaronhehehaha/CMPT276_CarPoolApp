@@ -7,6 +7,11 @@ class PostsController < ApplicationController
   def index
   #  @posts = Post.all
     @posts = Post.paginate(page: params[:page])
+    @hash = Gmaps4rails.build_markers(@posts) do |post, marker|
+      marker.lat post.latitude
+      marker.lng post.longitude
+      marker.infowindow post.user.firstname + " " + post.user.lastname
+    end
   end
 
   # GET /posts/1
@@ -75,7 +80,7 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:Address,:destination, :MonStartTime, :MonEndTime,
       :TueStartTime, :TueEndTime, :WenStartTime, :WenEndTime, :ThuStartTime, :ThuEndTime,
-       :FriStartTime, :FriEndTime, :Content)
+       :FriStartTime, :FriEndTime, :Content,:latitude,:longitude)
     end
 
     def user_params

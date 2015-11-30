@@ -30,6 +30,8 @@
         <%= f.number_field :FriEndTime ,placeholder:"The time you leave school on Friday."%>
         <p>Example: 0900 is 9:00. <strong>*Leave this blank if you are not available on Friday.</strong></p>
         <%= f.text_area :Content ,placeholder:"Content"%>
+        <%= f.number_field :latitude ,placeholder: "Latitude"%>
+        <%= f.number_field :longitude ,placeholder: "Longitude"%>
         <input class="button button-glow button-rounded button-raised button-primary" name="commit" type="submit" value="Post" />
       <% end %>
     </div>

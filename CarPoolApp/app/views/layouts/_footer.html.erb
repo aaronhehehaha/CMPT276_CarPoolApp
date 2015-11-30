@@ -7,11 +7,18 @@
       <% if logged_in? %>
         <li><%= link_to "HOME", current_user %></li>
       <% else %>
-        <li><%= link_to "HOME", root_path ,class: "select"%></li>
+        <li><%= link_to "HOME", root_path %></li>
       <% end %>
       <li><%= link_to "ABOUT", about_path %></li>
-      <li><%= link_to "SIGN UP", signup_path %></li>
-      <li><%= link_to "LOG IN", login_path %></li>
+      <% if logged_in? %>
+        <li><%= link_to "CREATE POST", createpost_path(current_user) %></li>
+        <li><%= link_to "SEARCH POST", viewpost_path(current_user) %></li>
+        <li><%= link_to "SETTINGS", edit_user_path(current_user) %></li>
+        <li><%= link_to 'CONVERSATIONS', conversations_path %></li>
+      <% else %>
+        <li><%= link_to "SIGN UP", signup_path %></li>
+        <li><%= link_to "LOG IN", login_path %></li>
+      <% end %>
     </ul>
   </nav>
 </footer>

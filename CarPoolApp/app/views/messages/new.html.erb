@@ -1,4 +1,8 @@
-
+  <div id="input_form">
+    <div class="form">
+    </br>
+    <h2>Send Message to other User</h2>
+        <div class="input">
 <%= form_tag messages_path, method: :post do %>
   <div class="form-group">
     <%= label_tag 'message[subject]', 'Subject' %>
@@ -15,5 +19,8 @@
     <%= select_tag 'recipients', recipients_options, multiple: true, class: 'form-control chosen-it' %>
   </div>
 
-  <%= submit_tag 'Send', class: 'btn btn-primary' %>
+  <%= submit_tag 'Send', class: 'button button-glow button-rounded button-raised button-primary' %>
 <% end %>
+  </div>
+</div>
+</div>

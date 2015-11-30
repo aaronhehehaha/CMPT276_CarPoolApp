@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
   def setup
-    @user = users(:holly)
+    @user = users(:michael)
     @other_user = users(:archer)
   end
 
@@ -54,5 +54,5 @@ class UsersControllerTest < ActionController::TestCase
     end
     assert_redirected_to root_url
   end
-
+  
 end

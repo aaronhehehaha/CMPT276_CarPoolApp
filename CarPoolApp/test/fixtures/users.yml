@@ -1,13 +1,4 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-holly:
-  firstname: Holly
-  lastname: Pontifex
-  email: hpontife@sfu.ca
-  password_digest: <%= User.digest('password') %>
-  admin: true
-  activated: true
-  activated_at: <%= Time.zone.now %>
-
 michael:
   firstname: Michael
   lastname: Example

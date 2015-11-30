@@ -30,6 +30,5 @@ class ActiveSupport::TestCase
   def integration_test?
     defined?(post_via_redirect)
   end
-
   # Add more helper methods to be used by all tests here...
 end

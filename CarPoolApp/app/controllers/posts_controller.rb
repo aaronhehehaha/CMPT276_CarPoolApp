@@ -6,17 +6,21 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
   #  @posts = Post.all
+   @user=current_user
     @posts = Post.paginate(page: params[:page])
     @hash = Gmaps4rails.build_markers(@posts) do |post, marker|
-      marker.lat post.latitude
-      marker.lng post.longitude
-      marker.infowindow post.user.firstname + " " + post.user.lastname
-    end
+    marker.lat post.latitude
+    marker.lng post.longitude
+    marker.infowindow post.Address
+
+  end
+ 
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @user=current_user
   end
 
   # GET /posts/new

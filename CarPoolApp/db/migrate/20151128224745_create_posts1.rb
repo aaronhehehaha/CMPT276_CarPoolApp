@@ -1,4 +1,4 @@
-class CreatePosts < ActiveRecord::Migration
+class CreatePosts1 < ActiveRecord::Migration
   def change
     create_table :posts do |t|
       t.integer :StreetNumber

@@ -3,41 +3,41 @@
       <tr>
         <td><span class="Ttitle"><%= link_to post.user.email, post.user %></span></td>
         <td><% if current_user?(post.user) %>
-          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-          |
+          <%= link_to 'Destroy |', post, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
-        <%= link_to 'Show', post %></td>
+        <%= link_to 'Show |', post %>
+        <%= link_to 'Start conversation', new_message_path %></td>
       </tr>
       <tr>
-        <td><span class="Ttitle">address: </span><%= post.Address %></td>
+        <td><span class="Ttitle">Address: </span><%= post.Address %></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="Ttitle">destination: </span><%= post.destination %></td>
+        <td><span class="Ttitle">Destination: </span><%= post.destination %></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="Ttitle">MonStartTime: </span><%= post.MonStartTime %></td>
-        <td><span class="Ttitle">MonEndTime: </span><%= post.MonEndTime %></td>
+        <td><span class="Ttitle">Monday Start Time: </span><%= post.MonStartTime %></td>
+        <td><span class="Ttitle">Monday End Time: </span><%= post.MonEndTime %></td>
       </tr>
       <tr>
-        <td><span class="Ttitle">TueStartTime: </span><%= post.TueStartTime %></td>
-        <td><span class="Ttitle">TueEndTime: </span><%= post.TueEndTime %></td>
+        <td><span class="Ttitle">Tuesday Start Time: </span><%= post.TueStartTime %></td>
+        <td><span class="Ttitle">Tuesday End Time: </span><%= post.TueEndTime %></td>
       </tr>
       <tr>
-        <td><span class="Ttitle">WenStartTime: </span><%= post.WenStartTime %></td>
-        <td><span class="Ttitle">WenEndTime: </span><%= post.WenEndTime %></td>
+        <td><span class="Ttitle">Wednesday Start Time: </span><%= post.WenStartTime %></td>
+        <td><span class="Ttitle">Wednesday End Time: </span><%= post.WenEndTime %></td>
       </tr>
       <tr>
-        <td><span class="Ttitle">ThuStartTime: </span><%= post.ThuStartTime %></td>
-        <td><span class="Ttitle">ThuEndTime: </span><%= post.ThuEndTime %></td>
+        <td><span class="Ttitle">Thursday Start Time: </span><%= post.ThuStartTime %></td>
+        <td><span class="Ttitle">Thursday End Time: </span><%= post.ThuEndTime %></td>
       </tr>
       <tr>
-        <td><span class="Ttitle">FriStartTime: </span><%= post.FriStartTime %></td>
-        <td><span class="Ttitle">FriEndTime: </span><%= post.FriEndTime %></td>
+        <td><span class="Ttitle">Friday Start Time: </span><%= post.FriStartTime %></td>
+        <td><span class="Ttitle">Friday End Time: </span><%= post.FriEndTime %></td>
       </tr>
       <tr>
-        <td><span class="Ttitle">Content: </span><%= post.Content %></td>
+        <td><span class="Ttitle">Additional Information: </span><%= post.Content %></td>
         <td></td>
       </tr>
     </table>
